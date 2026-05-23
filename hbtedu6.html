@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materi Training: Barber Headboss</title>
+    <style>
+        /* CSS Variables untuk Tema Barber */
+        :root {
+            --primary-gold: #c5a059;
+            --dark-bg: #1a1a1a;
+            --darker-bg: #121212;
+            --text-light: #f4f4f4;
+            --text-grey: #a0a0a0;
+            --card-bg: #252525;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Header / Hero Section */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://placehold.co/1200x600/121212/333333?text=Barbershop+Atmosphere');
+            background-size: cover;
+            border-bottom: 3px solid var(--primary-gold);
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary-gold);
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            color: var(--primary-gold);
+            border-left: 4px solid var(--primary-gold);
+            padding-left: 15px;
+            margin-top: 40px;
+        }
+
+        p.subtitle {
+            color: var(--text-grey);
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        /* Image Styling */
+        .visual-img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            border: 1px solid #333;
+        }
+
+        /* Quote Cards */
+        .quote-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .quote-card {
+            background-color: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            border-top: 3px solid var(--primary-gold);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .quote-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .quote-author {
+            color: var(--primary-gold);
+            font-weight: bold;
+            text-align: right;
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th, .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #333;
+        }
+
+        .comparison-table th {
+            background-color: var(--primary-gold);
+            color: var(--darker-bg);
+            font-weight: bold;
+        }
+
+        .comparison-table tr:hover {
+            background-color: #333;
+        }
+
+        /* Action Steps */
+        .step-box {
+            background-color: var(--card-bg);
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+        }
+
+        .step-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-gold);
+            margin-right: 20px;
+            min-width: 40px;
+        }
+
+        /* Footer */
+        .cta-section {
+            background-color: var(--primary-gold);
+            color: var(--darker-bg);
+            padding: 30px;
+            text-align: center;
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--darker-bg);
+            color: var(--primary-gold);
+            padding: 10px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .comparison-table { font-size: 0.9rem; }
+            .step-box { flex-direction: column; text-align: center; }
+            .step-number { margin-right: 0; margin-bottom: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>HBT EDUCATION<br>MIMPI / DREAM</h1>
+            <p class="subtitle">"Membangun Masa Depan: Mengapa Kita Perlu Punya Mimpi Besar?"</p>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <h2>1. Rutinitas vs Tujuan</h2>
+            <p>Teman-teman semua, coba jawab jujur dalam hati. Saat berangkat kerja pagi ini, apa yang kalian rasakan?</p>
+            
+            <img src="1.png" alt="Ilustrasi Semangat Kerja" class="visual-img">
+
+            <p>Banyak dari kita terjebak dalam siklus: <strong>Bangun -> Kerja -> Capek -> Tidur -> Ulangi.</strong></p>
+            <p>Hidup tanpa mimpi itu ibarat naik motor tapi tidak tahu tujuannya kemana. Bensin habis, tenaga habis, tapi kita cuma muter-muter di tempat.</p>
+        </section>
+
+        <section>
+            <h2>2. Kata Mereka yang Sukses</h2>
+            <div class="quote-container">
+                <div class="quote-card">
+                    <div class="quote-text">"Gantungkan cita-citamu setinggi langit! Jika engkau jatuh, engkau akan jatuh di antara bintang-bintang."</div>
+                    <div class="quote-author">- Ir. Soekarno</div>
+                    <p style="font-size: 0.9rem; color: #888; margin-top:10px;">Jangan takut punya mimpi memiliki atau mengelola barber sendiri, tentunya untuk mengelola barber sendiri kalian membutuhkan skill yang mumpuni dan kemampuan managerial yang baik. Kalaupun meleset, kamu sudah jadi barberman / hairstylist ahli dengan tabungan banyak.</p>
+                </div>
+
+                <div class="quote-card">
+                    <div class="quote-text">"Orang yang tak punya tujuan, akan bekerja untuk orang yang punya tujuan."</div>
+                    <div class="quote-author">- Brian Tracy</div>
+                    <p style="font-size: 0.9rem; color: #888; margin-top:10px;">Ini yang paling nendang. Kalau kalian kerja cuma "mengalir saja", kalian hanya akan jadi alat. Tapi kalau kalian punya mimpi, Headboss ini bukan tempat kerja karena kalian terpaksa, tapi kendaraan kalian untuk mencapai mimpi. Jadikan Headboss kendaraanmu untuk mencapai mimpimu, bukan tempat kerja paksa.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>3. Dampak Mimpi pada Dompet Kita</h2>
+            <p>Mari kita lihat perbedan nyata antara orang yang hanya "asal kerja" dengan yang "punya target".</p>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Situasi</th>
+                        <th>Si A (Tanpa Mimpi)</th>
+                        <th>Si B (Punya Mimpi Rumah)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Saat Pelanggan Datang</strong></td>
+                        <td>Muka masam, "Duh kerja lagi."</td>
+                        <td>Senyum, "Asik, peluang nambah tabungan."</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Kualitas Cukuran</strong></td>
+                        <td>Asal rapi, yang penting cepat.</td>
+                        <td>Detail & rapi, biar jadi langganan.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Keuangan</strong></td>
+                        <td>Gaji habis buat gaya hidup & hutang.</td>
+                        <td>Sisihkan 30-50% untuk tabungan mimpi.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5 Tahun Kemudian</strong></td>
+                        <td>Masih mengeluh gaji kurang.</td>
+                        <td>Sudah DP Rumah & punya skill tinggi.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>4. Strategi Mewujudkan Mimpi</h2>
+            <img src="2.png" alt="Strategi Menabung" class="visual-img">
+            
+            <div class="step-box">
+                <div class="step-number">01</div>
+                <div>
+                    <strong>Tentukan Mimpinya</strong><br>
+                    Contoh: "Saya mau beli Motor NMAX Cash (Rp 30 Juta)."
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">02</div>
+                <div>
+                    <strong>Konversi ke 'Kepala'</strong><br>
+                    Hitung targetnya. "Saya harus menyisihkan uang dari 2 kepala per hari khusus untuk tabungan motor."
+                </div>
+            </div>
+
+            <div class="step-box">
+                <div class="step-number">03</div>
+                <div>
+                    <strong>Visualisasi</strong><br>
+                    Setiap kali capek mencukur, bayangkan kalau kamu sudah selangkah lebih dekat dengan mimpimu. Rasa capek akan hilang.
+                </div>
+            </div>
+        </section>
+
+        <div class="cta-section">
+            <h3>Pengingat / Reminder</h3>
+            <p>Tuliskan 1 MIMPI TERBESAR kalian di wallpaper HP atau di tembok kamar. Lihat setiap pagi sebelum berangkat ke Headboss.</p>
+            <p><em>"Mimpi Besar + Perencanaan + Kerja Keras + Konsistensi = GACOR"</em></p>
+            <a href="https://headbosstreatment.com/gallery/formmimpi.html" class="btn" onclick="alert('Semangat! Mulai mimpimu hari ini!')">JIKA KITA GAGAL MEMBUAT PERENCANAAN, SESUNGGUHNYA KITA SEDANG MERENCANAKAN KEGAGALAN KITA SENDIRI</a>
+        </div>
+
+        <footer style="text-align: center; padding: 20px; margin-top: 30px; color: #555; font-size: 0.8rem;">
+            &copy; 2025 HBT EDU Internal Training Material by Gee
+        </footer>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Headboss Treatment</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Anton:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="https://headbosstreatment.com/logo-headboss.png">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        border: "hsl(var(--border))",
+                        input: "hsl(var(--input))",
+                        ring: "hsl(var(--ring))",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                        primary: {
+                            DEFAULT: "hsl(var(--primary))",
+                            foreground: "hsl(var(--primary-foreground))",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(var(--secondary))",
+                            foreground: "hsl(var(--secondary-foreground))",
+                        },
+                        destructive: {
+                            DEFAULT: "hsl(var(--destructive))",
+                            foreground: "hsl(var(--destructive-foreground))",
+                        },
+                        muted: {
+                            DEFAULT: "hsl(var(--muted))",
+                            foreground: "hsl(var(--muted-foreground))",
+                        },
+                        accent: {
+                            DEFAULT: "hsl(var(--accent))",
+                            foreground: "hsl(var(--accent-foreground))",
+                        },
+                        popover: {
+                            DEFAULT: "hsl(var(--popover))",
+                            foreground: "hsl(var(--popover-foreground))",
+                        },
+                        card: {
+                            DEFAULT: "hsl(var(--card))",
+                            foreground: "hsl(var(--card-foreground))",
+                        },
+                    },
+                    borderRadius: {
+                        lg: "var(--radius)",
+                        md: "calc(var(--radius) - 2px)",
+                        sm: "calc(var(--radius) - 4px)",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Source Serif 4', 'serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 0 0% 3.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 0 0% 3.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 0 0% 3.9%;
+            --primary: 0 0% 9%;
+            --primary-foreground: 0 0% 98%;
+            --secondary: 0 0% 96.1%;
+            --secondary-foreground: 0 0% 9%;
+            --muted: 0 0% 96.1%;
+            --muted-foreground: 0 0% 45.1%;
+            --accent: 0 0% 96.1%;
+            --accent-foreground: 0 0% 9%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 0 0% 98%;
+            --border: 0 0% 89.8%;
+            --input: 0 0% 89.8%;
+            --ring: 0 0% 3.9%;
+            --radius: 0.5rem;
+        }
+        .dark {
+            --background: 0 0% 3.9%;
+            --foreground: 0 0% 98%;
+            --muted: 0 0% 14.9%;
+            --muted-foreground: 0 0% 63.9%;
+            --border: 0 0% 14.9%;
+        }
+    </style>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="min-h-screen bg-background text-foreground font-serif flex flex-col selection:bg-foreground selection:text-background relative">
+    
+    <!-- Texture Overlay -->
+    <div class="fixed inset-0 pointer-events-none z-50 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')] mix-blend-multiply"></div>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 w-full border-b border-border bg-background/95 backdrop-blur-sm supports-[backdrop-filter]:bg-background/80">
+        <div class="container mx-auto px-4 h-16 md:h-20 flex items-center justify-between">
+            <a href="https://headbosstreatment.com" class="z-50">
+                <img 
+                    src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/2c1339d0-1c66-42f7-9d81-ba4edb5c1d7e/1767369315385-a5846d3d/logo.png" 
+                    alt="HEADBOSS" 
+                    class="h-8 md:h-10 w-auto object-contain dark:invert"
+                />
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8">
+                <!-- Services Dropdown -->
+                <div class="relative">
+                    <button id="services-desktop-btn" type="button" class="text-xs font-medium uppercase tracking-[0.2em] hover:underline underline-offset-4 transition-all inline-flex items-center gap-2" aria-haspopup="true" aria-expanded="false">
+                        Services
+                        <i data-lucide="chevron-down" class="h-4 w-4"></i>
+                    </button>
+                    <div id="services-desktop-menu" class="absolute left-0 top-full mt-3 min-w-[220px] border border-border bg-background shadow-lg backdrop-blur-sm hidden">
+                        <a href="https://headbosstreatment.com/HB/Servicedtm.html#" class="block px-4 py-3 text-xs font-medium uppercase tracking-[0.18em] hover:bg-accent transition-colors">
+                            HB Datumuseng
+                        </a>
+                        <a href="https://headbosstreatment.com/HB/Servicebwk.html" class="block px-4 py-3 text-xs font-medium uppercase tracking-[0.18em] hover:bg-accent transition-colors border-t border-border">
+                            HB Bawakaraeng
+                        </a>
+                    </div>
+                </div>
+                <a href="https://headbosstreatment.com/HB/The_Team.html" class="text-xs font-medium uppercase tracking-[0.2em] hover:underline underline-offset-4 transition-all">The Team</a>
+                <a href="https://headbosstreatment.com/HB/About.html" class="text-xs font-medium uppercase tracking-[0.2em] hover:underline underline-offset-4 transition-all">About</a>
+                <a href="https://headbosstreatment.com/HB/Contact.html" class="text-xs font-medium uppercase tracking-[0.2em] hover:underline underline-offset-4 transition-all">Contact</a>
+                <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-9 px-3"><a href="https://widget.zenwel.com/999310045/headboss-treatment?lang=en" target="_blank" rel="noopener noreferrer">
+                    Book Now </a>
+                </button>
+            </nav>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="md:hidden z-50 p-2 -mr-2 text-foreground" aria-label="Toggle menu">
+                <i data-lucide="menu" class="h-6 w-6" id="menu-icon"></i>
+                <i data-lucide="x" class="h-6 w-6 hidden" id="close-icon"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 bg-background flex flex-col pt-24 px-6 md:hidden transition-all duration-300 ease-in-out origin-top opacity-0 -translate-y-full pointer-events-none">
+        <div class="flex flex-col space-y-6">
+            <a href="https://headbosstreatment.com" class="text-3xl font-serif font-light italic hover:text-muted-foreground transition-colors border-b border-border pb-4">Home</a>
+            <!-- Services Dropdown (Mobile) -->
+            <div class="border-b border-border pb-4">
+                <button id="services-mobile-btn" type="button" class="w-full flex items-center justify-between text-3xl font-serif font-light italic hover:text-muted-foreground transition-colors" aria-expanded="false" aria-controls="services-mobile-menu">
+                    <span>Services</span>
+                    <i data-lucide="chevron-down" class="h-6 w-6"></i>
+                </button>
+                <div id="services-mobile-menu" class="mt-4 pl-2 space-y-3 hidden">
+                    <a href="https://headbosstreatment.com/HB/Servicedtm.html" class="block text-base font-mono uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
+                        HB Datumuseng
+                    </a>
+                    <a href="https://headbosstreatment.com/HB/Servicebwk.html" class="block text-base font-mono uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors">
+                        HB Bawakaraeng
+                    </a>
+                </div>
+            </div>
+            <a href="https://headbosstreatment.com/HB/The_Team.html" class="text-3xl font-serif font-light italic hover:text-muted-foreground transition-colors border-b border-border pb-4">The Team</a>
+            <a href="https://headbosstreatment.com/HB/About.html" class="text-3xl font-serif font-light italic hover:text-muted-foreground transition-colors border-b border-border pb-4">About</a>
+            <a href="https://headbosstreatment.com/HB/Contact.html" class="text-3xl font-serif font-light italic hover:text-muted-foreground transition-colors border-b border-border pb-4">Contact</a>
+        </div>
+        <div class="mt-auto mb-8 space-y-4">
+            <button class="inline-flex items-center justify-center whitespace-nowrap rounded-md font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 px-8 w-full text-base py-6"><a href="https://widget.zenwel.com/999310045/headboss-treatment?lang=en" target="_blank" rel="noopener noreferrer">
+                Book Appointment</a>
+            </button>
+            <div class="flex justify-between text-xs font-mono uppercase tracking-widest text-muted-foreground pt-4 border-t border-border">
+                <span>Makassar, INA</span>
+                <span>Est. 2021</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (About Page) -->
+    <main class="flex-1 flex flex-col w-full overflow-x-hidden">
+        <div class="min-h-screen py-16 md:py-24">
+            <div class="container mx-auto px-4">
+              
+              <!-- Header -->
+              <div class="max-w-4xl mb-16 md:mb-24">
+                <span class="text-xs md:text-sm font-mono uppercase tracking-widest text-muted-foreground mb-4 block">Our Philosophy</span>
+                <h1 class="text-4xl md:text-7xl font-sans font-bold leading-tight tracking-tight">
+                  WE ENGINEER CONFIDENCE <br />
+                  THROUGH PRECISION <br />
+                  AND RESTORATION.
+                </h1>
+              </div>
+
+              <!-- Content Grid -->
+              <div class="grid md:grid-cols-12 gap-8 md:gap-12 mb-20 md:mb-32">
+                <div class="md:col-span-5">
+                  <div class="aspect-[3/4] bg-neutral-100 w-full relative">
+                     <div class="absolute inset-0 flex items-center justify-center text-muted-foreground font-mono text-xs uppercase tracking-widest p-8 text-center border border-black">
+                        <!-- Image -->
+    <img 
+        src="a3jpg.jpeg"
+        alt="barbershop"
+        class="absolute inset-0 w-full h-full object-cover"
+    />
+
+    <!-- Overlay Effect -->
+    <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+
+                     </div>
+                  </div>
+                </div>
+                <div class="md:col-span-7 flex flex-col justify-center space-y-6 md:space-y-8">
+                  <h2 class="text-2xl md:text-3xl font-serif font-bold">The Headboss Standard</h2>
+                  <div class="space-y-4 md:space-y-6 text-base md:text-lg font-serif text-muted-foreground leading-relaxed">
+                    <p>
+                      Founded in 2021, Headboss Treatment was born from a frustration with the binary choice 
+                      modern men faced: a quick, impersonal chop shop or a sterile, clinical spa. 
+                      We saw the need for a third space—one that respects the craft of traditional modern barbering 
+                      while embracing the necessity of physical restoration.
+                    </p>
+                    <p>
+                      Our barbers dan Therapist aren't just stylists; they are trained in therapeutic massage techniques. 
+                      We understand that the tension you carry in your neck and shoulders affects your posture, 
+                      your presence, and your mindset.
+                    </p>
+                    <p>
+                      When you step out of our chair, you don't just look sharper. You feel lighter. 
+                      You stand taller. You are ready to lead.
+                    </p>
+                    <p>
+                        Quality, Service, Atmosphere!
+                    </p>
+                  </div>
+                  
+                  <div class="pt-6 md:pt-8 border-t border-black w-full">
+                    <div class="grid grid-cols-3 gap-4 md:gap-8 text-center md:text-left">
+                      <div>
+                        <h3 class="text-2xl md:text-4xl font-sans font-bold">5+</h3>
+                        <p class="text-[10px] md:text-xs font-mono uppercase tracking-widest mt-1 md:mt-2">Years Experience</p>
+                      </div>
+                      <div>
+                        <h3 class="text-2xl md:text-4xl font-sans font-bold">6k+</h3>
+                        <p class="text-[10px] md:text-xs font-mono uppercase tracking-widest mt-1 md:mt-2">Clients Served</p>
+                      </div>
+                      <div>
+                        <h3 class="text-2xl md:text-4xl font-sans font-bold">5.0</h3>
+                        <p class="text-[10px] md:text-xs font-mono uppercase tracking-widest mt-1 md:mt-2">Rating</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Team Section -->
+<div class="border-t border-black pt-16 md:pt-24">
+  <h2 class="text-3xl md:text-4xl font-sans font-bold mb-12 md:mb-16">THE TEAM</h2>
+
+  <div class="grid md:grid-cols-3 gap-8">
+
+    <!-- Astro -->
+    <div class="group cursor-pointer">
+      <div class="aspect-[4/5] bg-neutral-100 mb-6 border border-transparent group-hover:border-black transition-all relative overflow-hidden">
+        <img 
+          src="Astro1.jpg"
+          alt="Astro"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      <h3 class="text-lg md:text-xl font-serif font-bold">ASTRO</h3>
+
+      <p class="text-xs md:text-sm font-mono uppercase tracking-widest text-muted-foreground mt-1">
+        Certified By
+      </p>
+
+      <div class="mt-2 flex items-center gap-3">
+        <img src="dbp.PNG" alt="DBP Logo" class="h-16 w-auto object-contain" />
+        <img src="Juno.png" alt="Juno Logo" class="h-3 w-auto object-contain" />
+      </div>
+    </div>
+
+    <!-- Wahyu -->
+    <div class="group cursor-pointer">
+      <div class="aspect-[4/5] bg-neutral-100 mb-6 border border-transparent group-hover:border-black transition-all relative overflow-hidden">
+        <img 
+          src="Wahyu1.jpg"
+          alt="Wahyu"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      <h3 class="text-lg md:text-xl font-serif font-bold">WAHYU</h3>
+
+      <p class="text-xs md:text-sm font-mono uppercase tracking-widest text-muted-foreground mt-1">
+        Certified By
+      </p>
+
+      <div class="mt-2 flex items-center gap-3">
+        <img src="dbp.PNG" alt="DBP Logo" class="h-16 w-auto object-contain" />
+        <!-- kalau Wahyu tidak pakai Juno, biarkan hanya DBP -->
+      </div>
+    </div>
+
+    <!-- Kadebee -->
+    <div class="group cursor-pointer">
+      <div class="aspect-[4/5] bg-neutral-100 mb-6 border border-transparent group-hover:border-black transition-all relative overflow-hidden">
+        <img 
+          src="Kadebee1.PNG"
+          alt="Kade"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+      </div>
+
+      <h3 class="text-lg md:text-xl font-serif font-bold">KADEBEE</h3>
+
+      <p class="text-xs md:text-sm font-mono uppercase tracking-widest text-muted-foreground mt-1">
+        Certified By
+      </p>
+
+      <div class="mt-2 flex items-center gap-3">
+        <img src="dbp.PNG" alt="DBP Logo" class="h-16 w-auto object-contain" />
+        <img src="Juno.png" alt="Juno Logo" class="h-3 w-auto object-contain" />
+      </div>
+    </div>
+
+  </div>
+</div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border bg-foreground text-background py-12 md:py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+                <div class="space-y-4 md:space-y-6">
+                    <img 
+                        src="https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/uploads/2c1339d0-1c66-42f7-9d81-ba4edb5c1d7e/1767368115629-e80b672d/6a89bfb2-8761-47b9-b92e-95af78602972.png" 
+                        alt="HEADBOSS" 
+                        class="h-8 md:h-10 w-auto object-contain mb-2 invert dark:invert-0"
+                    />
+                    <p class="text-sm font-mono text-muted-foreground">
+                        Premium grooming and massage treatments for the modern gentleman.
+                    </p>
+                </div>
+                
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-muted-foreground">Menu</h4>
+                    <ul class="space-y-3">
+                        <li><a href="https://headbosstreatment.com/HB/The_Team.html" class="text-sm hover:underline underline-offset-4">The Team</a></li>
+                        <li><a href="https://headbosstreatment.com/HB/About.html" class="text-sm hover:underline underline-offset-4">About</a></li>
+                        <li><a href="https://headbosstreatment.com/HB/Contact.html" class="text-sm hover:underline underline-offset-4">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-muted-foreground">Visit Us</h4>
+                    <address class="not-italic text-sm space-y-2 font-mono text-white/80"><a href="https://maps.app.goo.gl/ZRdZWG9GhWwWmkW68" target="_blank" rel="noopener noreferrer">
+                        <p>HEADBOSS DTM</p>
+                        <p>Jl. Datumuseng No. 23a</p>
+                        <p>Makassar, Indonesia</p>
+                        <p>+62-89528317333</p></a>
+                    </address>
+                    <address class="not-italic text-sm space-y-2 font-mono text-white/80"><a href="https://maps.app.goo.gl/bfy8RZDVnDfPounD8" target="_blank" rel="noopener noreferrer">
+                        <p>HEADBOSS BWK</p>
+                        <p>Jl. G.Bawakaraeng No. 8</p>
+                        <p>Makassar, Indonesia</p>
+                        <p>+62-89528317333</p>
+                    </a>
+                    </address>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="text-xs font-bold uppercase tracking-widest text-muted-foreground">Hours</h4>
+                    <ul class="text-sm space-y-2 font-mono text-white/80">
+                        <li class="flex justify-between border-b border-white/10 pb-1"><span>Mon - Sun</span> <span>10am - 9pm</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-12 md:mt-20 pt-8 border-t border-muted-foreground/20 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+                <p class="text-[10px] md:text-xs font-mono text-muted-foreground">
+                    © 2021 HEADBOSS TREATMENT. All rights reserved.
+                </p>
+                <div class="flex gap-6">
+                    <a href="https://instagram.com/headbosstreatment" target="_blank" rel="noopener noreferrer" class="text-[10px] md:text-xs uppercase tracking-widest hover:underline">Instagram</a>
+                    <a href="https://tiktok.com/@headbosstreatment" target="_blank" rel="noopener noreferrer" class="text-[10px] md:text-xs uppercase tracking-widest hover:underline">Tiktok</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const menuToggle = document.getElementById('menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+        let isMenuOpen = false;
+
+        menuToggle.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            
+            if (isMenuOpen) {
+                // Open
+                mobileMenu.classList.remove('opacity-0', '-translate-y-full', 'pointer-events-none');
+                mobileMenu.classList.add('opacity-100', 'translate-y-0');
+                menuIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                // Close
+                mobileMenu.classList.add('opacity-0', '-translate-y-full', 'pointer-events-none');
+                mobileMenu.classList.remove('opacity-100', 'translate-y-0');
+                menuIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+                document.body.style.overflow = 'unset';
+            }
+        });
+    
+// Services Dropdown (Desktop)
+const servicesDesktopBtn = document.getElementById('services-desktop-btn');
+const servicesDesktopMenu = document.getElementById('services-desktop-menu');
+
+const closeDesktopServices = () => {
+    if (!servicesDesktopMenu) return;
+    servicesDesktopMenu.classList.add('hidden');
+    servicesDesktopBtn?.setAttribute('aria-expanded', 'false');
+};
+
+if (servicesDesktopBtn && servicesDesktopMenu) {
+    servicesDesktopBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        const isHidden = servicesDesktopMenu.classList.contains('hidden');
+        // close any open first
+        closeDesktopServices();
+        if (isHidden) {
+            servicesDesktopMenu.classList.remove('hidden');
+            servicesDesktopBtn.setAttribute('aria-expanded', 'true');
+        }
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!servicesDesktopMenu.classList.contains('hidden')) {
+            const target = e.target;
+            const wrapper = servicesDesktopBtn.closest('div.relative');
+            if (wrapper && !wrapper.contains(target)) closeDesktopServices();
+        }
+    });
+
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeDesktopServices();
+    });
+}
+
+// Services Dropdown (Mobile)
+const servicesMobileBtn = document.getElementById('services-mobile-btn');
+const servicesMobileMenu = document.getElementById('services-mobile-menu');
+
+if (servicesMobileBtn && servicesMobileMenu) {
+    servicesMobileBtn.addEventListener('click', () => {
+        const isHidden = servicesMobileMenu.classList.contains('hidden');
+        servicesMobileMenu.classList.toggle('hidden');
+        servicesMobileBtn.setAttribute('aria-expanded', String(isHidden));
+    });
+}
+</script>
+</body>
+</html>
